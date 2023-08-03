@@ -1,0 +1,431 @@
+/******************* COLORS ************************/
+/******************* Global Flex ************************/
+/******************* Center of the page *******************/
+/******************* Margin *******************/
+/******************* Width and height *******************/
+/******************* Accessibility ************************/
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
+body {
+  min-width: 1024px;
+  min-height: 780px;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", "DM Sans", sans-serif;
+  font-size: 16px;
+}
+
+/**************** Top greeting message ****************/
+.top_message {
+  grid-area: 1/1/2/5;
+}
+.top_message_name {
+  font-size: 36px;
+  margin-top: 0;
+}
+.top_message_name span {
+  color: red;
+}
+.top_message_text {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/**************** Responsive ****************/
+/**************** Header ****************/
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  padding: 15px;
+  background-color: black;
+}
+.header_logo {
+  width: 178px;
+  height: 61px;
+}
+.header_link {
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+nav {
+  width: stretch;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/**************** Responsive ****************/
+@media screen and (max-width: 768px) {
+  .header_link {
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .header_link {
+    font-size: 8px;
+    margin-left: 5px;
+  }
+}
+/**************** Side Bar ****************/
+.sidebar {
+  width: 110px;
+  display: flex;
+  background-color: black;
+  flex-direction: column;
+  height: auto;
+  justify-content: space-around;
+}
+.sidebar_logAs {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  text-align: center;
+  margin-top: -30px;
+}
+.sidebar_logAs a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #ff0000;
+}
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: -70px;
+}
+.sidebar_text {
+  color: white;
+  font-size: 10px;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+}
+.sidebar_button {
+  width: 50px;
+}
+
+.activity {
+  grid-area: 2/4/4/5;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-wrap: nowrap;
+  margin-left: 40px; 
+}
+.activity_item {
+  display: flex;
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  padding: 2vw; /* Increased padding */
+  margin-right: 40px;
+}
+.activity_item_icon {
+  width: 60px; /* Increased width */
+  height: 60px; /* Increased height */
+}
+.activity_item_text {
+  margin-left: 30px; /* Increased margin */
+}
+.activity_item_text p {
+  font-weight: 700;
+  font-size: 18px; /* Increased font size */
+  line-height: 28px; /* Increased line-height for better spacing */
+  color: #282d30;
+  margin: 0;
+}
+.activity_item_text h3 {
+  font-size: 14px; /* Increased font size */
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #74798c;
+  margin: 0;
+}
+
+/**************** Charts Main Block ****************/
+#charts_block {
+  display: grid;
+  grid-template-columns: repeat(4, 1.2fr); 
+  grid-template-rows: fit-content(100%) 1fr;
+  grid-row-gap: 20px;
+  padding-top: 2vh;
+  padding-left: 5vw;
+}
+
+#performance_chart_section {
+  grid-area: 3/1/4/4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+}
+
+#blank_footer {
+  grid-area: 4/4/4/4;
+  height: 60px;
+}
+
+/**************** Responsive ****************/
+@media screen and (max-height: 898px) {
+  #blank_footer {
+    height: 10px;
+  }
+}
+@media screen and (max-width: 1250px) {
+  #charts_block {
+    padding-top: 5vh;
+    padding-left: 7vw;
+  }
+}
+.barChart-svg {
+  background-color: #f5f7f9;
+  border-radius: 5px;
+}
+
+.bar_chart {
+  grid-area: 2/1/3/4;
+}
+
+.bar_chart_tooltip {
+  opacity: 0;
+  width: 70;
+  height: 180;
+  fill: grey;
+  transition: 0.15s ease-in-out;
+  opacity: 0;
+}
+.bar_chart_tooltip:hover {
+  transition: 0.15s ease-in-out;
+  opacity: 0.2;
+}
+
+.bar_chart_tooltip-red {
+  fill: #ff0000;
+  rx: 3px;
+}
+
+.bar_chart_tooltip-text {
+  text-anchor: middle;
+  font-size: 6px;
+  fill: white;
+}
+
+.red_circle {
+  fill: #ff0000;
+}
+
+.legends_text {
+  fill: #74798c;
+  color: #74798c;
+  font-size: 12px;
+}
+
+.chart_axis_grid {
+  stroke-dasharray: 3, 3;
+  color: lightgray;
+}
+
+.chart_axis {
+  font-size: 0.9rem;
+}
+
+.calories_line {
+  stroke: #ff0000;
+  stroke-width: 6;
+}
+
+.weight_line {
+  stroke: black;
+  stroke-width: 6;
+}
+
+.rounded_line {
+  stroke-linecap: round;
+}
+
+.butted_line {
+  stroke-linecap: butt;
+}
+
+/**************** Line Chart ****************/
+.line_chart {
+  grid-area: 1/1/2/2;
+  background-color: #ff0000;
+  border-radius: 5px;
+}
+
+.tooltips {
+  opacity: 0;
+  fill: white;
+}
+
+.t--transparent {
+  fill: rgba(0, 0, 0, 0.1);
+}
+
+.t--white {
+  fill: white;
+}
+
+.t--text {
+  text-anchor: middle;
+  fill: black;
+}
+
+.t--lowOpacity {
+  fill: rgba(255, 255, 255, 0.504);
+}
+
+.xAxis {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.legends {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-left: 10px;
+}
+
+/**************** Responsive ****************/
+@media screen and (max-width: 1550px) {
+  .legends {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .legends {
+    font-size: 0.6rem;
+    font-weight: bold;
+  }
+}
+/**************** Radial Chart ****************/
+.radial_chart {
+  grid-area: 1/3/2/4;
+  background-color: #f5f7f9;
+  border-radius: 5px;
+}
+
+.radial_legend {
+  font-size: 1.2rem;
+}
+
+.radial_text {
+  fill: #74798c;
+  text-anchor: middle;
+  font-size: 1.5rem;
+}
+
+.r--black {
+  fill: black;
+}
+
+/**************** Responsive ****************/
+@media screen and (max-width: 1550px) {
+  .radial_text {
+    font-size: 1.3rem;
+  }
+
+  .radial_legend {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .radial_text {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .radial_legend {
+    font-size: 1rem;
+  }
+}
+/**************** Spider Chart ****************/
+.spider_chart {
+  grid-area: 1/2/2/3;
+}
+
+.recharts-polar-angle-axis-tick-value {
+  transform: translate(2px, -2px) scaleY(1.05);
+}
+
+/**************** Responsive ****************/
+@media screen and (max-width: 1550px) {
+  .recharts-polar-angle-axis-tick-value {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .recharts-polar-angle-axis-tick-value {
+    font-size: 0.5rem;
+    font-weight: bold;
+  }
+}
+/**************** Home Page ****************/
+#main_section {
+  display: flex;
+}
+
+/**************** 404 Error ****************/
+#error404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 0 auto;
+  color: #ff0000;
+  margin-top: -50px;
+  text-align: center;
+}
+#error404 h1 {
+  font-size: 144px;
+  margin-bottom: 5px;
+}
+#error404 a {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #ff0000;
+}
+
+/**************** Responsive ****************/
+@media screen and (max-width: 768px) {
+  #error404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ff0000;
+    margin-top: 0px;
+    flex: 1 0 auto;
+  }
+  #error404 h1 {
+    font-size: 48px;
+    margin-bottom: 5px;
+  }
+  #error404 h2 {
+    font-size: 14px;
+  }
+  #error404 a {
+    font-size: 12px;
+    margin-top: 30px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

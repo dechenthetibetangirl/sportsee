@@ -1,0 +1,40 @@
+.activity {
+  grid-area: 2 / 4 / 4 / 5;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex-wrap: nowrap;
+  margin-left: 30px;
+  &_item {
+    display: flex;
+    // @include wh(258px, 124px);
+    background-color: $light-background;
+    border-radius: 5px;
+    padding: 2vw;
+    margin-right: 50px;
+
+    &_icon {
+      @include wh(60px, 60px);
+    }
+    &_text {
+      margin-left: 24px;
+
+      p {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: $secondary-color;
+        margin: 0;
+      }
+      h3 {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: $secondary-text-color;
+        margin: 0;
+      }
+    }
+  }
+}
