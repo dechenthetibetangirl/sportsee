@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# Sportsee
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React-based dashboard application that fetches data from an API, creates and displays different types of charts, and separates the code into reusable components.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+To get started with the application, follow the steps below:
 
-### `npm start`
+1. Clone the repository:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+git clone <repository_url>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+cd dashboard-application
+npm install
 
-### `npm test`
+npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The application should now be running on http://localhost:3000/.
 
-### `npm run build`
+Features
+The dashboard application has the following features:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Data Retrieval from API: The application fetches data from an external API using Axios. It also handles scenarios where the API is unavailable and uses locally simulated data in that case.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Chart Creation and Display: The application creates and displays different types of charts using the popular recharts library. The available charts include Bar Charts, Line Chart, Radial Chart, and Spider Chart.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Logical Code Separation: The code is logically separated into reusable components, making it easier to maintain and extend the application. Each chart is encapsulated in its own component and can be reused in other parts of the application.
 
-### `npm run eject`
+Project Structure
+The project has the following structure:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+src/
+components/: Contains all the reusable components used to build the dashboard.
+data/: Contains the simulated data used when the API is unavailable.
+services/: Contains classes that handle API calls and data processing.
+App.tsx: The main entry point of the application.
+Api.ts: Handles API calls and data retrieval using Axios.
+Apiurl.ts: Contains a function to determine the API URL based on configuration.
+index.tsx: The root file that renders the entire application.
+Dependencies
+The project uses the following main dependencies:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+React: JavaScript library for building user interfaces.
+Axios: Promise-based HTTP client for making API calls.
+Recharts: Charting library for React applications.
+D3.js: JavaScript library for creating interactive data visualizations.
+Configuration
+You can configure the application to use real API data or simulated data. To do this, modify the useMockData variable in Apiurl.ts. When useMockData is set to true, the application will use simulated data. Otherwise, it will try to fetch data from the specified API URL.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Contributing
+If you wish to contribute to the project, feel free to submit pull requests or raise issues.
